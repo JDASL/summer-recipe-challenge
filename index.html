@@ -11,7 +11,7 @@
     <title>Summer Recipe Challenge</title>
     <style>
         .banner-wrapper {
-            background-color: #FFDE59; /* match your yellow */
+            background-color: #FFDE59; 
             text-align: center;
             padding: 0 auto;
         }
@@ -52,16 +52,24 @@
             border-radius: 200px;
         }
 
+        .navbar-nav, .description, .recipe-caption, p.follow-us {
+            font-family: 'Avenir Next';
+
+        }
+
         .navbar-nav {
             font-size: 30px;
-            font-family: 'Avenir Next';
             font-weight: 500;
         }
 
         .description {
-            font-size: 30px;
-            font-family: 'Avenir Next';
+            font-size: 28px;
             text-align: center;
+        }
+
+        .recipe-caption {
+            font-size: 22px;
+            font-weight: 500;
         }
 
         #recipe {
@@ -79,29 +87,65 @@
         a {
             transition: ease-in-out;
             cursor: pointer;
+            text-decoration: none;
+            color: black;
         }
 
         a:hover {
             cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
         }
 
+        strong {
+            font-size: 28px;
+        }
+
         button:hover {
             cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
         }
 
+        #recipe-generated {
+            display: none; 
+            background-color: #fff8e1; 
+            border: 2px solid #fbf7af;
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 600px;
+            font-family: 'Bodoni Moda', serif;
+            font-size: 18px;
+            line-height: 1.6;
+            text-align: left;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+
+
         footer {
-            background-color: #F7F4E0; 
+            background-color: #F7F4E0;
             text-align: left;
             padding: 0 auto;
+        }
+
+        #footer-banner {
+            background-size: auto; 
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         .logo-footer {
             opacity: 0.6;
         }
 
-        p.follow-us {
+        p.follow-us, .footnote {
             font-size: 25px;
-            padding-top: 10px;
+            padding-top: 50px;
+            text-align: center;
+            padding-bottom: 50px;
+            margin-bottom: 0px;
+        }
+
+        .footnote {
+            padding-left: 30px;
+            padding-right: 30px;
         }
 
 
@@ -136,23 +180,53 @@
             <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/461/original/seafood_ceviche_plate_from_bird-eye-view_angle..jpg?1753971271" alt="Seafood Ceviche" title="Seafood Ceviche" class="img-fluid" id="recipe">
         </div>
         <div class="recipe-container mt-5 text-center">
-            <button type="button" class="btn btn-lg" id="recipe-title">
+            <span>
+                <p class="recipe-caption">Dive into summer with this no-cook seafood ceviche!</p>
+            </span>
+            <button type="button" class="btn btn-lg" id="generate-recipe-btn">
                 <strong>Seafood Ceviche 🦐🐙🐟</strong>
             </button>
         </div>
+        <div class="notepad-container">
+            <div id="recipe-generated" class="recipe-on-plate"></div>
+        </div>
     </div>
-    </div>
+    <script>
+  document.getElementById("generate-recipe-btn").addEventListener("click", function() {
+    const recipeHTML = `
+      <h2>Seafood Ceviche Recipe</h2>
+      <ul style="text-align:left; margin: 0 auto; display: inline-block;">
+        <li>200g fresh shrimp, peeled and chopped</li>
+        <li>100g squid, sliced</li>
+        <li>100g cooked octopus, diced</li>
+        <li>1/2 red onion, finely chopped</li>
+        <li>1 fresh chili, sliced (optional)</li>
+        <li>Juice of 4 limes</li>
+        <li>1 tbsp chopped coriander</li>
+        <li>Salt and pepper to taste</li>
+      </ul>
+      <p>Mix all ingredients and chill for 15 minutes. Serve cold and enjoy!</p>
+    `;
+   const recipeBox = document.getElementById("recipe-generated");
+   recipeBox.innerHTML = recipeHTML;
+   recipeBox.style.display = "block";
+  });
+</script>
+
+
     <footer>
-        <div class="row mt-4">
-            <div class="col-sm-6">
-                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/471/original/Hello_%283%29.png?1753981221" alt="Hello Seafood Lovers footer" class="logo-footer">
-            </div>
-            <div class="col-sm-6">
+        <div class="row mt-4 text-center">
+            <div class="col-sm-4" id="footer-banner">
                 <span class="footer-social-media">
                     <p class="follow-us">Follow us on <i class="fa-brands fa-instagram"> 🫶🏼</i></p>
                 </span>
+            </div>
+            <div class="col-sm-4">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/471/original/Hello_%283%29.png?1753981221" alt="">
+            </div>
+            <div class="col-sm-4">
                 <span>
-                    <p>This challenge is created by Jd Apirinya 🤍 and is open source on <a href=""> GitHub</a></a></p>
+                    <p class="footnote">This challenge is created by Jd Apirinya 🤍 It is open source on <a href="https://github.com/JDASL/summer-recipe-challenge.git" target="_blank"> GitHub</a> and hosted on <a href="https://summer-recipe-challenge.netlify.app/" target="_blank"> Netlify</a></p>
                 </span>
             </div>
         </div>
