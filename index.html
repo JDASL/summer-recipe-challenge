@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz@6..96&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/d8d89c7f5e.js" crossorigin="anonymous"></script>
+    <title>Summer Recipe Challenge</title>
+    <style>
+        .banner-wrapper {
+            background-color: #FFDE59; /* match your yellow */
+            text-align: center;
+            padding: 0 auto;
+        }
+        .logo-banner {
+            max-width: 200px;
+            height: auto;
+        }
+
+        h1, #recipe-title {
+            font-family: 'Unbounded';
+        }
+
+        h1 {
+            font-size: 60px;
+            font-weight: 500;
+        }
+
+        #recipe-title {
+            font-size: 25px;
+        }
+
+
+       img {
+            max-width: 300px;
+            height: auto;
+        }
+
+        .navbar {
+            padding: 0;
+        }
+
+        .container-fluid {
+            background: #ffffff;
+        }
+
+        .navbar-logo {
+            max-width: 200px;
+            border-radius: 200px;
+        }
+
+        .navbar-nav {
+            font-size: 30px;
+            font-family: 'Avenir Next';
+            font-weight: 500;
+        }
+
+        .description {
+            font-size: 30px;
+            font-family: 'Avenir Next';
+            text-align: center;
+        }
+
+        #recipe {
+            border-radius: 40px;
+            box-shadow: 12px 12px 2px 2px rgba(222, 217, 135, 0.6);
+            max-width: 100%;
+            height: auto;
+        }
+
+        #recipe-title:hover {
+            cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
+        }
+
+
+        a {
+            transition: ease-in-out;
+            cursor: pointer;
+        }
+
+        a:hover {
+            cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
+        }
+
+        button:hover {
+            cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
+        }
+
+        footer {
+            background-color: #F7F4E0; 
+            text-align: left;
+            padding: 0 auto;
+        }
+
+        .logo-footer {
+            opacity: 0.6;
+        }
+
+        p.follow-us {
+            font-size: 25px;
+            padding-top: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header class="banner-wrapper">
+        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/468/original/Hello_%281%29.png?1753979212" alt="Hello Seafood Lovers Logo" id="logo-banner">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" aria-current="page" href="#">Hello, Seafood Lovers!</a>
+                <a class="nav-link" href="https://docs.google.com/document/d/1UvFN4sHFu4G8Akn1XqsgIt-adIxolUPGr_7hPhejKz4/edit?usp=drive_link">Other Recipes</a>
+                <a class="nav-link" href="https://www.instagram.com/yourgurljd/">Contact</a>
+            </div>
+            </div>
+        </div>
+        </nav>
+        </header>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Hello, Seafood Lovers!</h1>
+        <div class="introduction">
+        <span>
+            <p class="description">Zesty, chill, tropical and fresh summer recipe 🐟🍋 Today's tasty summer recipe is...</p>
+        </span>
+        <div>
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/461/original/seafood_ceviche_plate_from_bird-eye-view_angle..jpg?1753971271" alt="Seafood Ceviche" title="Seafood Ceviche" class="img-fluid" id="recipe">
+        </div>
+        <div class="recipe-container mt-5 text-center">
+            <button type="button" class="btn btn-lg" id="recipe-title">
+                <strong>Seafood Ceviche 🦐🐙🐟</strong>
+            </button>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="row mt-4">
+            <div class="col-sm-6">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/471/original/Hello_%283%29.png?1753981221" alt="Hello Seafood Lovers footer" class="logo-footer">
+            </div>
+            <div class="col-sm-6">
+                <span class="footer-social-media">
+                    <p class="follow-us">Follow us on <i class="fa-brands fa-instagram"> 🫶🏼</i></p>
+                </span>
+                <span>
+                    <p>This challenge is created by Jd Apirinya 🤍 and is open source on <a href=""> GitHub</a></a></p>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
