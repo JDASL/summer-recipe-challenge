@@ -91,7 +91,7 @@
             color: black;
         }
 
-        a:hover {
+        a:hover, #generate-recipe-btn:hover  {
             cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
         }
 
@@ -99,13 +99,9 @@
             font-size: 28px;
         }
 
-        button:hover {
-            cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
-        }
-
         #recipe-generated {
             display: none; 
-            background-color: #fff8e1; 
+            background-color: #F6F4E0; 
             border: 2px solid #fbf7af;
             border-radius: 16px;
             padding: 30px;
@@ -121,12 +117,18 @@
 
         footer {
             background-color: #F7F4E0;
-            text-align: left;
-            padding: 0 auto;
+            max-width: 100%;
+            padding: 40px 0;
+            margin: 0;
+        }
+
+        footer .row, footer .col-sm-4 {
+            margin: 0;
+            padding: 0;
         }
 
         #footer-banner {
-            background-size: auto; 
+            background-size: cover; 
             background-position: center;
             background-repeat: no-repeat;
         }
@@ -212,10 +214,9 @@
    recipeBox.style.display = "block";
   });
 </script>
-
-
-    <footer>
-        <div class="row mt-4 text-center">
+    </div>
+    <footer class="w-100">
+        <div class="row g-0 text-center">
             <div class="col-sm-4" id="footer-banner">
                 <span class="footer-social-media">
                     <p class="follow-us">Follow us on <i class="fa-brands fa-instagram"> 🫶🏼</i></p>
