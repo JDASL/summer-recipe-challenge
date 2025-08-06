@@ -35,7 +35,6 @@
 
 
        img {
-            max-width: 300px;
             height: auto;
         }
 
@@ -63,6 +62,86 @@
         }
 
         .description {
+            font-size: 25px;
+            text-align: center;
+            background-color: #f2f0ce;
+            border-radius: 20px;
+        }
+
+        .main-photo-container {
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        #main-photo {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            border-radius: 40px;
+            box-shadow: 12px 12px 2px 2px rgba(222, 217, 135, 0.6);
+            max-width: 100%;
+        }
+
+        #main-photo.revealed {
+            opacity: 1;
+        }
+
+        #reveal-btn {
+            color: #000000;
+        }
+
+        .gallery-container {
+            display: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .thumbnails {
+            display: absolute;
+            bottom: 8px;
+            display: flex;
+            flex-direction: row;
+            gap: 6px;
+        }
+
+        .thumbnails div {
+            width: 8px;
+            height: 8px;
+            cursor: pointer;
+            border-radius: 100%;
+        }
+
+        .slides {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            padding: 1rem;
+        }
+
+        .slides::-webkit-scrollbar {
+            display: none;
+        }
+            
+        .slides > div {
+            scroll-snap-align: start;
+        }
+            
+        .slides img {
+            max-width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .slides img:hover {
+            transform: scale(1.05);
+        }
+
+        .description {
             font-size: 28px;
             text-align: center;
         }
@@ -72,17 +151,9 @@
             font-weight: 500;
         }
 
-        #recipe {
-            border-radius: 40px;
-            box-shadow: 12px 12px 2px 2px rgba(222, 217, 135, 0.6);
-            max-width: 100%;
-            height: auto;
-        }
-
-        #recipe-title:hover {
+        #reveal-btn:hover {
             cursor: url('https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/470/original/heart-outline.png?1753980833'), auto;
         }
-
 
         a {
             transition: ease-in-out;
@@ -133,12 +204,11 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
 
-
         footer {
             background-color: #FFDE59;
             max-width: 100%;
-            padding: 0;
-            margin: 0;
+            padding-bottom: 20px;
+            margin: 0 !important;
         }
 
         footer .row, footer .col-sm-4 {
@@ -170,12 +240,20 @@
             padding-right: 30px;
         }
 
+        @media (max-width: 1000px) {
+            h1 {
+                font-size: 40px;
+                font-weight: 500;
+            }
+            
+        }
+
 
     </style>
 </head>
 <body>
     <header class="banner-wrapper">
-        <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/468/original/Hello_%281%29.png?1753979212" alt="Hello Seafood Lovers Logo" id="logo-banner">
+            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/468/original/Hello_%281%29.png?1753979212" alt="Hello Seafood Lovers Logo" id="logo-banner">  
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="#"></a>
@@ -184,27 +262,44 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="#">HSL 💛</a>
-                <a class="nav-link" href="https://docs.google.com/document/d/1UvFN4sHFu4G8Akn1XqsgIt-adIxolUPGr_7hPhejKz4/edit?usp=drive_link">Other Recipes</a>
-                <a class="nav-link" href="https://en.wikipedia.org/wiki/Ceviche">Read more 💛 </a>
-                <a class="nav-link" href="https://www.instagram.com/yourgurljd/">Contact</a>
+                <a class="nav-link active" aria-current="page" href="#">Summer Time💛</a>
+                <a class="nav-link" href="https://docs.google.com/document/d/1UvFN4sHFu4G8Akn1XqsgIt-adIxolUPGr_7hPhejKz4/edit?usp=drive_link">Other Recipes🧡</a>
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Ceviche">Read more💛 </a>
+                <a class="nav-link" href="https://www.instagram.com/yourgurljd/">Contact🧡</a>
             </div>
             </div>
         </div>
         </nav>
         </header>
     <div class="container mt-5">
-        <h1 class="text-center mb-4">Hello, Seafood Lovers!</h1>
-        <div class="introduction">
-        <span>
-            <p class="description">Zesty, chill, tropical and fresh summer 🐟🍋 Today's tasty summer recipe is...</p>
-        </span>
-        <div>
-            <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/461/original/seafood_ceviche_plate_from_bird-eye-view_angle..jpg?1753971271" alt="Seafood Ceviche" title="Seafood Ceviche" class="img-fluid" id="recipe">
+        <h1 class="text-center mb-4">My favorite tasty summer recipe 🧡💛💚</h1>
+        <div class="container">
+        <div class="description-container text-center mt-4">
+            <span>
+                <p class="description">The tasty summer recipe that has always been my favorite started from when my partner and I dated, and he was always the one who cooked for us. One day he introduced me this delicious dish, and I just fell in love with it! Even when we went out and ordered this summery dish, it never tasted the same as his cooking.
+            </span>
+            <div class="gallery-container">
+                <div class="slides">
+                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/761/original/IMG_8174.jpg?1754489113" class="img-slides"></div>
+                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/774/original/WhatsApp_Image_2025-08-06_at_4.24.15_PM.jpeg?1754490269" class="img-slides"></div>
+                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/775/original/View_recent_photos_3.jpeg?1754490447" class="img-slides"></div>
+                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/776/original/View_recent_photos_4.jpeg?1754490652" class="img-slides"></div>
+                    <div><img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/777/original/View_recent_photos_5.jpeg?1754490662" class="img-slides"></div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="main-photo-container mt-5 text-center">
+            <button class="btn btn-warning mb-3" id="reveal-btn">
+                Click to reveal the photo 👀
+            </button>
+            <div id="photo-wrapper" style="display: none;">
+                <img src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/171/773/original/1cc709ec-4c5f-402d-8cbc-e7661f9eeef6.jpg?1754490100" alt="Main Photo" title="Seafood Ceviche" class="img-fluid mt-4" id="main-photo">
+            </div>
         </div>
         <div class="recipe-container mt-5 text-center">
             <span>
-                <p class="recipe-caption">Dive into summer with this no-cook seafood ceviche!</p>
+                <p class="recipe-caption">Click the button below for the recipe!</p>
             </span>
             <button type="button" class="btn btn-lg generate-recipe-btn" id="generate-recipe-btn">
                 <strong>Seafood Ceviche 🦐🐙🐟</strong>
@@ -215,12 +310,12 @@
         </div>
     </div>
     <script>
-  document.getElementById("generate-recipe-btn").addEventListener("click", function() {
+    document.getElementById("generate-recipe-btn").addEventListener("click", function() {
     const recipeHTML = `
-      <h2>Seafood Ceviche Recipe</h2>
+      <h2>Seafood Ceviche Recipe🐙🦐🐟</h2>
       <ul style="text-align:left; margin: 0 auto; display: inline-block;">
         <li>200g fresh shrimp, peeled and chopped</li>
-        <li>100g squid, sliced</li>
+        <li>100g squid,shrimpd</li>
         <li>100g cooked octopus, diced</li>
         <li>1/2 red onion, finely chopped</li>
         <li>1 fresh chili, sliced (optional)</li>
@@ -234,13 +329,27 @@
    recipeBox.innerHTML = recipeHTML;
    recipeBox.style.display = "block";
   });
-</script>
+    </script>
+    <script>
+        document.getElementById("reveal-btn").addEventListener("click", function() {
+            const wrapper = document.getElementById("photo-wrapper");
+            wrapper.style.display = "block";
+
+            const mainPhoto = document.getElementById("main-photo");
+            mainPhoto.classList.add("revealed");
+            mainPhoto.style.visibility = "visible";
+
+            wrapper.scrollIntoView({ behavior: 'smooth' });
+
+            this.style.display = "none";
+        });
+    </script>
     </div>
     <footer class="mt-5">
         <div class="row g-0 text-center">
             <div class="col-sm-4" id="footer-banner">
                 <span class="footer-social-media">
-                    <p class="follow-us">Follow us on <i class="fa-brands fa-instagram"> 🫶🏼</i></p>
+                    <p class="follow-us">Follow me on <i class="fa-brands fa-instagram"> 🫶🏼</i></p>
                 </span>
             </div>
             <div class="col-sm-4">
